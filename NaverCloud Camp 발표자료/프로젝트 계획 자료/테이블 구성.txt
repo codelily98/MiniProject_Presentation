@@ -1,0 +1,13 @@
+[회원가입]
+name, ID, pwd, date
+
+[게시판]
+seq, ID, title, content ,date
+
+[목록]
+seq, id, name, title, content ,date
+
+sql select s.name 게.(seq, id, name, title, content ,date) from 게시판, 회원;
+
+[Java]
+

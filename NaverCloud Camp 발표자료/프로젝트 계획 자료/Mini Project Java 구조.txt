@@ -1,0 +1,53 @@
+[package]
+board.bean
+board.dao
+board.main
+board.service
+
+[class]
+board.bean.BoardDTO.java (DTO 클래스)
+board.dao.BoardDAO.java (오라클 DB 연동)
+board.main.IndexMain.java (기능 호출만하는 main)
+board.service.Board.java (interface execute();)
+board.service.BoardMain.java (menu01 메서드 구현)
+board.service.BoardService.java (menu02 메서드 구현)
+board.service.DeleteService.java (게시글 삭제)
+board.service.LoginService.java (로그인)
+board.service.ModifyService.java (게시글 수정)
+board.service.SignUpService.java (회원가입)
+board.service.ViewService.java (게시글 확인)
+board.service.WriteService.java (게시글 작성)
+
+[menu01 메서드]
+**********관리**********
+        1.회원가입
+        2.로그인
+        3.게시판
+        4.종료
+**********관리**********
+번호 선택 : 
+
+[menu02 메서드]
+----------관리----------
+        1.게시글 작성
+        2.작성 내용 보기
+        3.게시글 수정
+        4.게시글 삭제
+        5.이전 메뉴
+        6.서비스 종료
+------------------------
+번호 선택 : 
+
+[Oracle DB : project_board]
+create sequence project_board_seq nocache;
+
+create table project_board (
+seq number,
+id varchar2(30), -- 아이디
+pwd varchar2(50), -- 비밀번호
+name varchar2(15)  not  null, -- 이름
+title varchar2(100) unique,  -- 제목
+content varchar2(500), -- 내용
+logtime date -- 날짜
+);
+
